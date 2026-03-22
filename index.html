@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eaglauncher 1.0</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: #1a1a1a;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.sidebar button {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    background: #2a2a2a;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background: #4CAF50;
+}
+
+/* Main area */
+.main {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    display: block;
+    margin: auto;
+    width: 300px;
+}
+
+/* Background image */
+.bg {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Play button */
+.play-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 40px;
+    font-size: 20px;
+    background: #2ecc71;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-btn:hover {
+    background: #27ae60;
+}
+
+/* Version selector */
+select {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>EAGLERCRAFT</h2>
+
+    <button onclick="setVersion('1.8.html')">Web Edition</button>
+    <button onclick="setVersion('modded.html')">Modded</button>
+</div>
+
+<div class="main">
+
+    <!-- Logo -->
+    <img src="https://files.catbox.moe/d2cfeu.png" class="logo">
+
+    <!-- Background -->
+    <img src="https://wallpapercave.com/wp/wp2757874.jpg" class="bg">
+
+    <!-- Version Dropdown -->
+    <select id="version">
+        <option value="1.8.html">1.8 PvP</option>
+        <option value="1.5.html">1.5 Classic</option>
+    </select>
+
+    <!-- Play Button -->
+    <button class="play-btn" onclick="play()">PLAY</button>
+
+</div>
+
+<script>
+function play() {
+    let version = document.getElementById("version").value;
+    window.open(version, "_blank");
+}
+
+function setVersion(file) {
+    document.getElementById("version").value = file;
+}
+</script>
+
+</body>
+</html>
